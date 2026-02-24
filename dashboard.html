@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pharmacy Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body class="dashboard-body">
+
+
+<nav class="navbar">
+
+<div class="logo">
+Pharmacy System
+</div>
+
+<ul>
+<li><a href="#">Dashboard</a></li>
+<li><a href="{{ url_for('logout') }}">Logout</a></li>
+</ul>
+
+</nav>
+
+
+
+<section class="hero-image-section">
+
+<div class="hero-overlay">
+
+<h1>Pharmacy Management System</h1>
+
+<p>
+Manage medicines, billing, suppliers and reports efficiently.
+</p>
+
+<button class="hero-btn">
+Explore Modules
+</button>
+
+</div>
+
+</section>
+
+
+
+<div class="notification-button">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>No new notifications</span>
+
+<i class="fa-solid fa-check"></i>
+
+</div>
+
+
+
+<section class="module-grid">
+
+<div class="module-card">
+<div class="circle-icon">
+<i class="fa-solid fa-capsules"></i>
+</div>
+<h4>Medicine Management</h4>
+</div>
+
+<div class="module-card">
+<div class="circle-icon">
+<i class="fa-solid fa-file-invoice"></i>
+</div>
+<h4>Sales & Billing</h4>
+</div>
+
+<div class="module-card">
+<div class="circle-icon">
+<i class="fa-solid fa-clock"></i>
+</div>
+<h4>Expiry Alerts</h4>
+</div>
+
+<div class="circle-icon">
+<i class="fa-solid fa-chart-column"></i>
+</div>
+<h4>Reports</h4>
+</div>
+
+<div class="module-card">
+<div class="circle-icon">
+<i class="fa-solid fa-truck"></i>
+</div>
+<h4>Supplier Management</h4>
+</div>
+
+<div class="module-card">
+<div class="circle-icon">
+<i class="fa-solid fa-box"></i>
+</div>
+<h4>Purchase & Restock</h4>
+</div>
+
+</section>
+
+
+
+<div class="footer-buttons">
+
+<button onclick="window.location.href='/about'">
+About Us
+</button>
+
+<button onclick="window.location.href='/contact'">
+Contact Us
+</button>
+
+</div>
+
+
+</body>
+</html>

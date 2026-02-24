@@ -1,0 +1,525 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* ================= BODY ================= */
+
+body {
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: url("../static/images/background.jpg") no-repeat center center/cover;
+
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 60px;
+
+    background: rgba(255,255,255,0.25);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+}
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #2a5bff;
+
+}
+
+.navbar ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+.navbar a {
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-weight: 600;
+
+}
+
+.navbar a:hover {
+
+    color: #ff7eb3;
+
+}
+
+
+
+/* ================= LOGIN / REGISTER ================= */
+
+.container {
+
+    height: calc(100vh - 80px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.box {
+
+    width: 380px;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 8px 35px rgba(0,0,0,0.3);
+
+    text-align: center;
+
+}
+
+.box input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    border: none;
+
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+
+    background: transparent;
+
+    outline: none;
+
+    color: white;
+
+}
+
+.box button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: linear-gradient(135deg, #6ea0ff, #ff7eb3);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+
+/* ================= DASHBOARD BODY ================= */
+
+.dashboard-body {
+
+    background: linear-gradient(135deg, #f5f9ff, #ffeef5);
+
+}
+
+
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image-section {
+
+    height: 70vh;
+
+    background: url("../static/images/camero.jpg") no-repeat center center/cover;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.hero-overlay {
+
+    background: rgba(255,255,255,0.9);
+
+    padding: 50px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+}
+
+.hero-overlay h1 {
+
+    font-size: 45px;
+
+    color: #2a5bff;
+
+}
+
+.hero-overlay p {
+
+    margin: 20px 0;
+
+    color: #555;
+
+}
+
+.hero-btn {
+
+    padding: 12px 30px;
+
+    border-radius: 25px;
+
+    border: none;
+
+    background: linear-gradient(135deg, #6ea0ff, #ff7eb3);
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+
+/* ================= NOTIFICATION BAR ================= */
+
+.notification-button {
+
+    width: 85%;
+
+    margin: -40px auto 40px auto;
+
+    padding: 18px 25px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, #6ea0ff, #ff7eb3);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 18px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* ================= MODULE GRID ================= */
+
+.module-grid {
+
+    width: 85%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+
+/* ================= MODULE CARD ================= */
+
+.module-card {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+
+}
+
+.module-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+/* ================= ICON ================= */
+
+.circle-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #6ea0ff, #ff7eb3);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: auto;
+
+    margin-bottom: 15px;
+
+    font-size: 26px;
+
+}
+
+
+
+/* ================= FOOTER BUTTONS ================= */
+
+.footer-buttons {
+
+    margin-top: 50px;
+
+    text-align: center;
+
+}
+
+.footer-buttons button {
+
+    padding: 12px 25px;
+
+    margin: 10px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: linear-gradient(135deg, #6ea0ff, #ff7eb3);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.module-grid{
+
+grid-template-columns: repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.module-grid{
+
+grid-template-columns: 1fr;
+
+}
+
+}
+/* ================= MEDICINE MANAGEMENT ================= */
+
+.page-container {
+
+    width: 85%;
+    margin: auto;
+    margin-top: 40px;
+
+}
+
+
+/* Medicine form card */
+
+.medicine-form {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+    margin-bottom: 40px;
+
+}
+
+
+.medicine-form h3 {
+
+    color: #2a5bff;
+
+    margin-bottom: 20px;
+
+}
+
+
+.medicine-form input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ccc;
+
+    outline: none;
+
+}
+
+
+.medicine-form button {
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: linear-gradient(135deg, #6ea0ff, #ff7eb3);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* Medicine table */
+
+.medicine-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+}
+
+
+.medicine-table th {
+
+    background: linear-gradient(135deg, #6ea0ff, #ff7eb3);
+
+    color: white;
+
+    padding: 15px;
+
+}
+
+
+.medicine-table td {
+
+    padding: 12px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.medicine-table tr:hover {
+
+    background: #f5f9ff;
+
+}
+
+
+/* Delete button */
+
+.delete-btn {
+
+    color: red;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+.delete-btn:hover {
+
+    color: darkred;
+
+}
