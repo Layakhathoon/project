@@ -18,6 +18,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <body class="dashboard-body">
 
 
+<!-- NAVBAR -->
+
 <nav class="navbar">
 
 <div class="logo">
@@ -25,13 +27,15 @@ Pharmacy System
 </div>
 
 <ul>
-<li><a href="#">Dashboard</a></li>
+<li><a href="/dashboard">Dashboard</a></li>
 <li><a href="{{ url_for('logout') }}">Logout</a></li>
 </ul>
 
 </nav>
 
 
+
+<!-- HERO IMAGE -->
 
 <section class="hero-image-section">
 
@@ -43,7 +47,8 @@ Pharmacy System
 Manage medicines, billing, suppliers and reports efficiently.
 </p>
 
-<button class="hero-btn">
+<button class="hero-btn"
+onclick="document.querySelector('.module-grid').scrollIntoView({behavior:'smooth'})">
 Explore Modules
 </button>
 
@@ -53,64 +58,145 @@ Explore Modules
 
 
 
+<!-- NOTIFICATION BAR -->
+
 <div class="notification-button">
 
 <i class="fa-solid fa-bell"></i>
 
-<span>No new notifications</span>
+<span>
 
+{% if alert_count > 0 %}
+
+{{ alert_count }} medicines expiring soon
+
+{% else %}
+
+No new notifications
+
+{% endif %}
+
+</span>
+
+{% if alert_count > 0 %}
+<i class="fa-solid fa-triangle-exclamation"></i>
+{% else %}
 <i class="fa-solid fa-check"></i>
+{% endif %}
 
 </div>
 
 
+
+<!-- MODULE GRID -->
 
 <section class="module-grid">
 
-<div class="module-card">
+
+<!-- Medicine -->
+
+<div class="module-card"
+onclick="window.location.href='/medicine'">
+
 <div class="circle-icon">
 <i class="fa-solid fa-capsules"></i>
 </div>
+
 <h4>Medicine Management</h4>
+
 </div>
 
-<div class="module-card">
+
+
+<!-- Billing -->
+
+<div class="module-card"
+onclick="window.location.href='/billing'">
+
 <div class="circle-icon">
 <i class="fa-solid fa-file-invoice"></i>
 </div>
+
 <h4>Sales & Billing</h4>
+
 </div>
 
-<div class="module-card">
+
+
+<!-- Expiry -->
+
+<a href="{{ url_for('expiry') }}" style="text-decoration:none; color:inherit;">
+
+<div class="module-card expiry-card"
+onclick="window.location.href='{{ url_for('expiry') }}'">
+
 <div class="circle-icon">
 <i class="fa-solid fa-clock"></i>
 </div>
+
 <h4>Expiry Alerts</h4>
+
+{% if alert_count > 0 %}
+<span class="badge">
+{{ alert_count }}
+</span>
+{% endif %}
+
 </div>
+
+</a>
+
+
+
+<!-- Reports (FIXED ALIGNMENT) -->
+
+<div class="module-card"
+onclick="window.location.href='/reports'">
 
 <div class="circle-icon">
 <i class="fa-solid fa-chart-column"></i>
 </div>
+
 <h4>Reports</h4>
+
 </div>
 
-<div class="module-card">
+
+
+<!-- Supplier -->
+
+<div class="module-card"
+onclick="window.location.href='/supplier'">
+
 <div class="circle-icon">
 <i class="fa-solid fa-truck"></i>
 </div>
+
 <h4>Supplier Management</h4>
+
 </div>
 
-<div class="module-card">
+
+
+<!-- Purchase -->
+
+<div class="module-card"
+onclick="window.location.href='/purchase'">
+
 <div class="circle-icon">
 <i class="fa-solid fa-box"></i>
 </div>
+
 <h4>Purchase & Restock</h4>
+
 </div>
+
 
 </section>
 
 
+
+<!-- FOOTER -->
 
 <div class="footer-buttons">
 
