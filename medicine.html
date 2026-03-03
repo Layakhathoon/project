@@ -15,22 +15,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </head>
 
+
 <body class="dashboard-body">
 
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
 
 <div class="logo">
-Pharmacy System
+<i class="fa-solid fa-capsules"></i> Pharmacy System
 </div>
 
 <ul>
 
-<li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+<li>
+<a href="{{ url_for('dashboard') }}">
+<i class="fa-solid fa-house"></i> Dashboard
+</a>
+</li>
 
-<li><a href="{{ url_for('logout') }}">Logout</a></li>
+<li>
+<a href="{{ url_for('logout') }}">
+<i class="fa-solid fa-right-from-bracket"></i> Logout
+</a>
+</li>
 
 </ul>
 
@@ -38,18 +47,19 @@ Pharmacy System
 
 
 
-<!-- PAGE CONTENT -->
+<!-- ================= PAGE CONTAINER ================= -->
 
 <div class="page-container">
 
 
 <h2 style="color:#2a5bff; margin-bottom:20px;">
+<i class="fa-solid fa-capsules"></i>
 Medicine Management
 </h2>
 
 
 
-<!-- ADD MEDICINE FORM -->
+<!-- ================= ADD MEDICINE FORM ================= -->
 
 <div class="medicine-form">
 
@@ -57,38 +67,67 @@ Medicine Management
 
 <form method="POST" action="{{ url_for('add_medicine') }}">
 
-<input type="text" name="name" placeholder="Medicine Name" required>
 
-<input type="text" name="batch" placeholder="Batch Number" required>
+<input type="text"
+name="medicine_name"
+placeholder="Medicine Name"
+required>
 
-<input type="number" step="0.01" name="price" placeholder="Price" required>
 
-<input type="date" name="expiry" required>
+<input type="text"
+name="batch_no"
+placeholder="Batch Number"
+required>
+
+<input type="text"
+name="category"
+placeholder="Category"
+required>
+
+<input type="date"
+name="expiry_date"
+required>
+
+<input type="number"
+step="0.01"
+name="price"
+placeholder="Price"
+required>
+
+
+<input type="number"
+name="stock_quantity"
+placeholder="Stock Quantity"
+required>
+
+
 
 <button type="submit">
+
 <i class="fa-solid fa-plus"></i>
 Add Medicine
+
 </button>
-
 </form>
-
 </div>
 
-
-
-<!-- MEDICINE TABLE -->
+<!-- ================= MEDICINE TABLE ================= -->
 
 <h3 style="margin-bottom:15px;">Medicine Stock</h3>
 
+
 <table class="medicine-table">
+
 
 <tr>
 
 <th>ID</th>
 <th>Name</th>
 <th>Batch</th>
-<th>Price</th>
+<th>Category</th>
 <th>Expiry Date</th>
+<th>Price</th>
+<th>Stock</th>
 <th>Action</th>
 
 </tr>
@@ -98,19 +137,23 @@ Add Medicine
 
 <tr>
 
-<td>{{ medicine[0] }}</td>
+<td>{{ medicine.medicine_id }}</td>
 
-<td>{{ medicine[1] }}</td>
+<td>{{ medicine.medicine_name }}</td>
 
-<td>{{ medicine[2] }}</td>
+<td>{{ medicine.batch_no }}</td>
 
-<td>{{ medicine[3] }}</td>
+<td>{{ medicine.category }}</td>
 
-<td>{{ medicine[4] }}</td>
+<td>{{ medicine.expiry_date }}</td>
+
+<td>₹ {{ medicine.price }}</td>
+
+<td>{{ medicine.stock_quantity }}</td>
 
 <td>
 
-<a href="{{ url_for('delete_medicine', id=medicine[0]) }}"
+<a href="{{ url_for('delete_medicine', medicine_id=medicine.medicine_id) }}"
 class="delete-btn">
 
 <i class="fa-solid fa-trash"></i>
